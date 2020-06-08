@@ -14,26 +14,40 @@
 {% block content %}
     {% include "partials/page-header.html" %}
     <main>
-        <h4>
-            <strong>2 pontos</strong>
-            encontrados</h4>
+        {% if total > 0 %}
+            <h4>
+                <strong>{{total}}
+                    pontos</strong>
+                encontrados
+            </h4>
 
-        <div class="cards">
+            <div class="cards">
 
-            {% for place in places %}
-                <div class="card">
-                    <img src="{{ place.image }}" alt="{{ place.name }}"/>
-                    <h1>{{ place.name }}</h1>
-                    <h3>{{ place.items }}</h3>
-                    <p>
-                        {{ place.city }},
-                        {{ place.state }}
-                        <br/>
-                        {{ place.address }}
-                        <br/>
-                        {{ place.address2 }}
-                    </p>
-                </div>
-            {% endfor %}
-        </div>
+                {% for place in places %}
+                    <div class="card">
+                        <img src="{{ place.image }}" alt="{{ place.name }}"/>
+                        <h1>{{ place.name }}</h1>
+                        <h3>{{ place.items }}</h3>
+                        <p>
+                            {{ place.state }},
+                            {{ place.city }}
+                            <br/>
+                            {{ place.address }}
+                            <br/>
+                            {{ place.address2 }}
+                        </p>
+                    </div>
+                {% endfor %}
+
+            </div>
+
+            {%else%}
+
+            <h4>
+                <strong>Nenhum
+                </strong>local encontrado
+            </h4>
+
+        {% endif %}
+
     {% endblock content %}
