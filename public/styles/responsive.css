@@ -12,7 +12,7 @@
         min-width: 90%;
         justify-content: center;
         position: absolute;
-        bottom: 48px;
+        bottom: 4px;
         left: 50%;
         transform: translateX(-50%);
     }
@@ -108,5 +108,28 @@
         font-size: 14px;
         line-height: 18px;
         margin-top: 14px;
+    }
+}
+
+@media (max-height: 550px) {
+    #page-home main {
+        justify-content: inherit;
+    }
+    #page-home main a,
+    #page-home main a span {
+        height: 40px;
+    }
+
+    #page-home main h1 {
+        font-size: 24px;
+    }
+
+    #page-home main a span {
+        width: 40px;
+    }
+
+    #page-home main a strong,
+    #page-home header a {
+        font-size: 12px;
     }
 }
