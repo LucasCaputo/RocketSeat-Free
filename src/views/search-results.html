@@ -23,7 +23,7 @@
 
             <div class="cards">
 
-                {% for place in places %}
+                {% for place in places | reverse %}
                     <div class="card">
                         <img src="{{ place.image }}" alt="{{ place.name }}"/>
                         <h1>{{ place.name }}</h1>
